@@ -30,74 +30,75 @@ export const EmployeeForm = () => {
         setshowAlert(true);
         setTimeout(() => {
             setshowAlert(false);
-        }, 2000);
+        }, 1500);
     };
 
     return (
         <div>
 
             <div className="d-flex my-5 justify-content-between">
-                <button type="button" className="btn btn-outline-secondary" onClick={() => navigate("/")}>Back</button>
+                <button type="button" className="" onClick={() => navigate(-1)}>Go Back</button>
                 <h1 className="text-center">{id ? "Edit" : "Add new"} Employee</h1>
                 <div />
             </div>
 
-            <div className="card border-primary p-5 m-5">
+            <div className="cards">
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label className="form-label mt-2" htmlFor="inputValid">Name</label>
+                    <div className="">
+                        <label className="form-label mt-2" htmlFor="inputValid">Name</label> <br />
                         <input
                             name="name"
                             type="text"
                             value={inputValues.name}
                             onChange={handleInputChange}
-                            className="form-control"
+                            className=""
                             id="inputValid"
                         />
                     </div>
 
 
                     <div className="form-group">
-                        <label className="form-label mt-2" htmlFor="inputValid">Email</label>
+                        <label className="form-label mt-2" htmlFor="inputValid">Email</label> <br />
                         <input
                             name="email"
                             type="email"
                             value={inputValues.email}
                             onChange={handleInputChange}
-                            className="form-control"
+                            className=""
                             id="inputValid"
                         />
                     </div>
 
 
                     <div className="form-group">
-                        <label className="form-label mt-2" htmlFor="inputValid">Address</label>
+                        <label className="form-label mt-2" htmlFor="inputValid">Address</label> <br />
                         <input
                             type="text"
                             name="address"
                             value={inputValues.address}
                             onChange={handleInputChange}
-                            className="form-control"
+                            className=""n
                             id="inputValid"
+                          
                         />
                     </div>
 
 
                     <div className="form-group">
-                        <label className="form-label mt-2" htmlFor="inputValid">Phone</label>
+                        <label className="form-label mt-2" htmlFor="inputValid">Phone</label> <br />
                         <input
                             name="phone"
-                            type="text"
+                            type="number"
                             value={inputValues.phone}
                             onChange={handleInputChange}
-                            className="form-control"
+                            className=""
                             id="inputValid"
                         />
                     </div>
 
 
                     <div className="d-grid gap-2 mt-3">
-                        <button type="submit" className="btn btn-outline-primary btn-block">{id ? "Edit" : "Add"} Employee</button>
+                        <button type="submit" onClick={()=>navigate(-1)} className="btn btn-outline-primary btn-block">{id ? "Edit" : "Add"} Employee</button>
                     </div>
                 </form>
             </div>
@@ -106,7 +107,7 @@ export const EmployeeForm = () => {
                 showAlert && (
                     <div className="px-5">
                         <div className="alert alert-success">
-                            <strong>Well done!</strong> {id ? "edit" : "added a new"} Employee.
+                            <strong>Well done!</strong> {id ? "edited" : "added a new"} Employee.
                         </div>
                     </div>
                 )

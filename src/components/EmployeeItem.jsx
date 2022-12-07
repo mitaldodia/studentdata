@@ -13,7 +13,7 @@ export const EmployeeItem = ({ employee, setEmployees }) => {
     }
 
     return (
-        <tr className="table-primasry">
+        <tr className="table table-responsive">
             <th>{name}</th>
             <td>{email}</td>
             <td>{address}</td>
