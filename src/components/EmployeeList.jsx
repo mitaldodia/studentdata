@@ -11,11 +11,11 @@ export const EmployeeList = () => {
 
     return (
         <div>
-            <h1 className="my-5 text-center">Student's Data</h1>
+            <h1 className="my-5 text-center">Manage Employees</h1>
 
             {
                 employees.length > 0 ? (
-                    <div className="card ">
+                    <div className="card bg-secondary p-3">
                         <table className="table table-hover">
                             <thead>
                                 <tr>
@@ -34,7 +34,7 @@ export const EmployeeList = () => {
                         </table>
                     </div>
                 ) : (
-                    <h3 className="text-center">You can add students Data by click <b>ADD</b> Student button</h3>
+                    <h3 className="text-center">No employees</h3>
                 )
             }
 

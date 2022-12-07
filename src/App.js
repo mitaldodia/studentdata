@@ -2,7 +2,6 @@ import { EmployeeList } from "./components";
 import { Navbar } from "./components";
 import { EmployeeForm } from "./components";
 import { Route, Routes } from "react-router-dom";
-import '../src/styles/index.css'
 
 export const App = () => {
   return (
