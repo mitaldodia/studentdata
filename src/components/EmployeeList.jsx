@@ -34,7 +34,7 @@ export const EmployeeList = () => {
                         </table>
                     </div>
                 ) : (
-                    <h3 className="text-center">You can add students Data by click ADD Student button</h3>
+                    <h3 className="text-center">You can add students Data by click <b>ADD</b> Student button</h3>
                 )
             }
 

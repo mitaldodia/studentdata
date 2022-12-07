@@ -1,5 +1,5 @@
 body{
- background: rgb(238, 238, 238) !important;
+ background: rgb(216, 216, 216) !important;
 }
 
 .navbar-dark .navbar-brand{
@@ -26,6 +26,17 @@ button:hover{
     transition:all 0.3s ease-in-out;
 }
 .card{
-    background-color:rgb(235, 227, 255);
-    box-shadow: none !important;
+    background-color:rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+    padding: 0 !important;
+}
+table{
+    background: #fff;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+table thead tr{
+    background: rgba(230, 228, 237, 0.741);
+ 
 }
