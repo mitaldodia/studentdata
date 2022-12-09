@@ -4,8 +4,6 @@ import { useForm } from './../hooks/useForm';
 import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
 import { editEmployee } from './../service/localstorage';
-import * as Yup from 'yup';
-import "yup-phone";
 
 export const EmployeeForm = () => {
     const navigate = useNavigate();
@@ -20,7 +18,7 @@ export const EmployeeForm = () => {
     });
 
     // form validation
-   
+  
 
     useEffect(() => {
         if (id) {
@@ -38,7 +36,7 @@ export const EmployeeForm = () => {
             setshowAlert(false);
         }, 1500);
     };
-
+    
     return (
         <div className='student-add-form'>
 
@@ -55,10 +53,11 @@ export const EmployeeForm = () => {
                         <input
                             name="fname"
                             type="text"
-                            value={inputValues.name}
+                            value={inputValues.fname}
                             onChange={handleInputChange}
                             className="form-detail"
                             id="inputValid"
+                            required
                         />
                     </div>
                     <div className="col-6 my-4">
@@ -70,6 +69,7 @@ export const EmployeeForm = () => {
                             onChange={handleInputChange}
                             className="form-detail"
                             id="inputValid"
+                            required
                         />
                     </div>
 
@@ -82,6 +82,7 @@ export const EmployeeForm = () => {
                             onChange={handleInputChange}
                             className="form-detail"
                             id="inputValid"
+                            required
                         />
                     </div>
                     <div className="form-group col-6 my-4">
@@ -93,6 +94,7 @@ export const EmployeeForm = () => {
                             onChange={handleInputChange}
                             className="form-detail"
                             id="inputValid"
+                            required
                         />
                     </div>
 
@@ -106,6 +108,7 @@ export const EmployeeForm = () => {
                             onChange={handleInputChange}
                             className="form-detail"
                             id="inputValid"
+                            required
                           
                         />
                     </div>
@@ -115,7 +118,15 @@ export const EmployeeForm = () => {
 
 
                     <div className="d-grid gap-2 mt-3">
-                        <button type="submit" onClick={()=>navigate(-1)} className="btn btn-outline-primary btn-block mb-5">{id ? "Edit" : "Add"} Employee</button>
+                    {
+                       
+                       (inputValues.phone&&inputValues.address&&inputValues.email&&inputValues.fname&&inputValues.lname)===''?
+                    
+                        <button type="submit" onClick={()=>alert('Please enter all inputs')} className="btn btn-outline-primary btn-block">{id ? "Edit" : "Add"} Employee</button>
+                       : <button type="submit" onClick={()=>setTimeout(() => {navigate(-1)},1400)} className="btn btn-outline-primary btn-block">{id ? "Edit" : "Add"} Employee</button>
+                      
+                   }
+                        {/* <button type="submit" onClick={()=>navigate(-1)} className="btn btn-outline-primary btn-block mb-5">{id ? "Edit" : "Add"} Employee</button> */}
                     </div>
                 </form>
             </div>
