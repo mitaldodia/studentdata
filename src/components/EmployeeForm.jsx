@@ -4,17 +4,23 @@ import { useForm } from './../hooks/useForm';
 import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
 import { editEmployee } from './../service/localstorage';
+import * as Yup from 'yup';
+import "yup-phone";
 
 export const EmployeeForm = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const [showAlert, setshowAlert] = useState(false);
     const { inputValues, handleInputChange, resetForm, setForm } = useForm({
-        name: '',
+        fname: '',
+        lname: '',
         email: '',
         address: '',
         phone: ''
     });
+
+    // form validation
+   
 
     useEffect(() => {
         if (id) {
@@ -34,7 +40,7 @@ export const EmployeeForm = () => {
     };
 
     return (
-        <div>
+        <div className='student-add-form'>
 
             <div className="d-flex my-5 justify-content-between">
                 <button type="button" className="" onClick={() => navigate(-1)}>Go Back</button>
@@ -43,62 +49,73 @@ export const EmployeeForm = () => {
             </div>
 
             <div className="cards">
-                <form onSubmit={handleSubmit}>
-                    <div className="">
-                        <label className="form-label mt-2" htmlFor="inputValid">Name</label> <br />
+                <form onSubmit={handleSubmit} className="row">
+                    <div className="col-6 my-4">
+                        <label className="form-label mt-2" htmlFor="inputValid">First Name</label> <br />
                         <input
-                            name="name"
+                            name="fname"
                             type="text"
                             value={inputValues.name}
                             onChange={handleInputChange}
-                            className=""
+                            className="form-detail"
+                            id="inputValid"
+                        />
+                    </div>
+                    <div className="col-6 my-4">
+                        <label className="form-label mt-2" htmlFor="inputValid">Last Name</label> <br />
+                        <input
+                            name="lname"
+                            type="text"
+                            value={inputValues.name}
+                            onChange={handleInputChange}
+                            className="form-detail"
                             id="inputValid"
                         />
                     </div>
 
-
-                    <div className="form-group">
+                    <div className="form-group col-6 my-4">
                         <label className="form-label mt-2" htmlFor="inputValid">Email</label> <br />
                         <input
                             name="email"
                             type="email"
                             value={inputValues.email}
                             onChange={handleInputChange}
-                            className=""
+                            className="form-detail"
                             id="inputValid"
                         />
                     </div>
-
-
-                    <div className="form-group">
-                        <label className="form-label mt-2" htmlFor="inputValid">Address</label> <br />
-                        <input
-                            type="text"
-                            name="address"
-                            value={inputValues.address}
-                            onChange={handleInputChange}
-                            className=""n
-                            id="inputValid"
-                          
-                        />
-                    </div>
-
-
-                    <div className="form-group">
+                    <div className="form-group col-6 my-4">
                         <label className="form-label mt-2" htmlFor="inputValid">Phone</label> <br />
                         <input
                             name="phone"
                             type="number"
                             value={inputValues.phone}
                             onChange={handleInputChange}
-                            className=""
+                            className="form-detail"
                             id="inputValid"
                         />
                     </div>
 
+                    <div className="form-group col-12 my-4">
+                        <label className="form-label mt-2" htmlFor="inputValid">Address</label> <br />
+                        <textarea
+                        rows="3"
+                            type="text"
+                            name="address"
+                            value={inputValues.address}
+                            onChange={handleInputChange}
+                            className="form-detail"
+                            id="inputValid"
+                          
+                        />
+                    </div>
+
+
+                  
+
 
                     <div className="d-grid gap-2 mt-3">
-                        <button type="submit" onClick={()=>navigate(-1)} className="btn btn-outline-primary btn-block">{id ? "Edit" : "Add"} Employee</button>
+                        <button type="submit" onClick={()=>navigate(-1)} className="btn btn-outline-primary btn-block mb-5">{id ? "Edit" : "Add"} Employee</button>
                     </div>
                 </form>
             </div>

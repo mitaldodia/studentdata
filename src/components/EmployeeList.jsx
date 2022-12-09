@@ -1,6 +1,7 @@
 import { EmployeeItem } from './EmployeeItem';
 import { useEffect, useState } from 'react';
 import { getListEmployees } from './../service/localstorage';
+import { useNavigate } from 'react-router-dom';
 
 export const EmployeeList = () => {
     const [employees, setEmployees] = useState([]);
@@ -8,18 +9,22 @@ export const EmployeeList = () => {
     useEffect(() => {
         setEmployees(getListEmployees());
     }, []);
-
+    const navigate = useNavigate();
     return (
         <div>
+            <button className="btn add-btn" onClick={() => navigate("/create-employee")}>
+            Add new Student
+            </button>
             <h1 className="my-5 text-center">Students Data</h1>
 
             {
                 employees.length > 0 ? (
                     <div className="cards">
-                        <table className="table table-hover">
+                        <table className="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Name</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Address</th>
                                     <th scope="col">Phone</th>

@@ -1,27 +1,19 @@
-import { useNavigate } from 'react-router-dom';
 
+import { FaUserCircle } from "react-icons/fa";
 export const Navbar = () => {
-    const navigate = useNavigate();
+    
     return (
         <>
             <nav className="navbar navbar-expand-lg ">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#!">Counseller</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                    <a className="navbar-brand" href="#!">Student Informations</a>
+                   
 
                     <div className="collapse navbar-collapse" id="navbarColor03">
-                        <ul className="navbar-nav me-auto">
-
-                        </ul>
-
-                        <button
-                            className="btn btn-outline-secondary my-2 my-sm-0"
-                            onClick={() => navigate("/create-employee")}
-                        >
-                            Add Student
-                        </button>
+                        <div className="porfile-detail">
+                            <FaUserCircle/>
+                        </div>
+                        
                     </div>
                 </div>
             </nav>

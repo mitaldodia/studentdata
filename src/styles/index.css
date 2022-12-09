@@ -3,32 +3,50 @@ body{
 }
 
 button{
-    background: rgb(119, 107, 255) !important;
-    border-radius: 10px !important;
+    background-color: #8c33dc !important;
+    border-radius: 5px !important;
     color: white !important;
     font-weight: 700 !important;
     border: 0 !important;
+    margin-top: 40px !important;
+    font-size: 20px !important;
+    padding: 10px 12px;
+}
+.student-add-form {
+    background-color: #fff;
+    padding: 20px 120px 40px 120px;
+    margin: 30px 0;
 }
 
-button:hover{
-    background: #fff !important;
-    color: rgb(119, 107, 255) !important;
-    transition: all  ease-in-out !important;
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-end;
 }
-
 .navbar{
-    background: rgb(212, 210, 235);
+    background: rgb(37 37 37);
 }
 
 .navbar-brand{
-    color: black !important;
+    color: #fff !important;
     font-weight: 800 !important;
     font-size: 26px !important;
+}
+.porfile-detail svg{
+    font-size: 30px;
+    color: #fff;
 }
 h3{
     font-size: 22px !important;
 }
 
+button:hover {
+    background-color: #fff !important;
+    color: #8c33dc!important;
+    transition: all ease-in-out !important;
+}
 table{
     margin:  0 !important;
     padding: 0 !important;
@@ -37,12 +55,20 @@ table{
 }
 
 table thead tr{
-    background: rgb(212, 210, 235);
+    background: #8c33dc ;
 }
-table thead tr th{
-    color: black;
+table thead tr th {
+    color: #fff;
+    padding: 15px !important;
+    text-align: center;
+    font-size: 20px;
 }
-
+table tbody tr td, table tbody tr th{
+    padding: 15px !important;
+    text-align: center;
+    font-size: 20px;
+    color: #8c33dc;
+}
 table tbody tr{
     border-bottom: 1px solid rgb(223, 223, 223);
 }
@@ -55,9 +81,9 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+/* input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 
 form{
     text-align:left;
@@ -67,10 +93,21 @@ form label{
     font-weight: 800 !important;
 }
 
-form input{
+form .form-detail{
     width: 100%;
-    border: 1px solid rgb(215, 215, 215) !important;
+    border: 1px solid #8c33dc4d !important;
     background: transparent !important;
-    padding: 8px;
-    border-radius: 6px;
+    padding: 14px;
+    border-radius: 2px;
+}
+.student-add-form h1{
+    text-transform: capitalize;
+    font-size: 40px;
+    color: rgb(37 37 37);
+    font-weight: bold;
+}
+.student-add-form label{
+    font-size: 18px;
+    font-weight: 600;
+    color: #8c33dc;
 }
